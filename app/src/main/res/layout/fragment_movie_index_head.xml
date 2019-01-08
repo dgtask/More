@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tvLine"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/colorPrimary"/>
+
+    <RelativeLayout
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp">
+
+        <ImageView
+            android:id="@+id/ivMore"
+            android:layout_width="wrap_content"
+            android:layout_height="14dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_more"/>
+
+        <TextView
+            android:id="@+id/tvMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="更多"
+            android:textSize="14sp"
+            android:textColor="@color/gray"
+            android:layout_toLeftOf="@id/ivMore"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            tools:text="标题"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:layout_toLeftOf="@+id/tvMore"
+            android:layout_centerVertical="true"
+            android:textColor="@color/colorAccent"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

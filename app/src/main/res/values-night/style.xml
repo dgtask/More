@@ -1,0 +1,9 @@
+<resources>
+
+    <!-- 菜单栏背景设置 -->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+
+</resources>

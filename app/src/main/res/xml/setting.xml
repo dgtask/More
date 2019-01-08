@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="流量控制">
+        <SwitchPreference
+            android:key="auto_refresh"
+            android:defaultValue="true"
+            android:summaryOn="打开列表时自动更新列表"
+            android:summaryOff="打开列表时自动更新列表"
+            android:title="自动刷新"/>
+
+        <SwitchPreference
+            android:key="auto_loadmore"
+            android:defaultValue="true"
+            android:summaryOn="列表滚动时自动加载更多"
+            android:summaryOff="列表滚动时自动加载更多"
+            android:title="列表滚动时"/>
+
+    </PreferenceCategory>
+
+    <Preference
+        android:key="haircut"
+        android:title="虚拟理发"/>
+
+    <Preference
+        android:key="clear_cache"
+        android:title="清除缓存"/>
+
+    <Preference
+        android:key="about"
+        android:title="关于"/>
+
+</PreferenceScreen>

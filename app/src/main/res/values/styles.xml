@@ -1,0 +1,45 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="styleLoadingLayout">@style/LoadingLayoutStyle</item>
+    </style>
+
+    <!-- 菜单栏背景设置 -->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- ToolBar样式 -->
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">@color/colorAccent</item>
+        <item name="actionMenuTextColor">@color/colorAccent</item> <!-- 颜色 -->
+        <item name="android:textSize">18sp</item> <!-- 字体大小 -->
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+    </style>
+
+    <!-- ToolBar菜单栏 -->
+    <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>  <!--设置不覆盖锚点-->
+    </style>
+
+    <!--用于电影详情-->
+    <style name="CollapsingToolbarTitleStyle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
+    <style name="LoadingLayoutStyle" parent="LoadingLayout.Style">
+        <item name="llEmptyImage">@mipmap/news_logo</item>
+        <item name="llEmptyText">暂无数据</item>
+        <item name="llErrorImage">@mipmap/news_logo</item>
+        <item name="llErrorText">网络异常</item>
+        <item name="llRetryText">重试</item>
+    </style>
+</resources>

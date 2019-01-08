@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/action_data"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@mipmap/ic_menu_news"
+            android:title="@string/main_news" />
+        <item
+            android:id="@+id/nav_read"
+            android:icon="@mipmap/ic_menu_read"
+            android:title="@string/main_read" />
+        <!--<item
+            android:id="@+id/nav_music"
+            android:icon="@mipmap/ic_menu_music"
+            android:title="@string/main_music" />-->
+        <item
+            android:id="@+id/nav_movie"
+            android:icon="@mipmap/ic_menu_movie"
+            android:title="@string/main_movie" />
+    </group>
+    <group
+        android:id="@+id/action_settings"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@mipmap/ic_menu_setting"
+            android:title="@string/setting" />
+        <item
+            android:id="@+id/nav_night"
+            android:icon="@mipmap/ic_menu_night"
+            android:title="@string/night_mode" />
+    </group>
+</menu>

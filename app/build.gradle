@@ -1,0 +1,112 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.benz.all"
+        minSdkVersion 21
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            abiFilters "armeabi", "x86"
+        }
+    }
+    buildTypes {
+        release {
+            // 不显示Log, 在java代码中的调用方式为：BuildConfig.LOG_DEBUG
+            buildConfigField "boolean", "LEO_DEBUG", "false"
+            // 混淆
+            minifyEnabled true
+            // Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            // 加载默认混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            // 显示Log
+            buildConfigField "boolean", "LEO_DEBUG", "true"
+            versionNameSuffix "_debug"
+            // 混淆
+            minifyEnabled true
+            // Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            // 加载默认混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // 自动识别libs目录下的资源
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    // lint编译错误不终止
+    lintOptions {
+        abortOnError false
+    }
+
+    // 允许maven配置
+    allprojects {
+        repositories {
+            maven { url "https://jitpack.io" }
+        }
+    }
+
+    // 打包自动修改名称，格式为程序名_版本号_打包时间.apk
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.each {
+                output -> output.outputFile = new File(output.outputFile.parent, "All" + "_v${defaultConfig.versionName}_${releaseTime()}.apk");
+            }
+    }
+}
+
+// 获取当前系统的时间
+def releaseTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    // 网络处理
+    // 图片加载库
+    // 图片处理库
+    // 控件注解
+    // 日志打印
+    // 简单数据存储
+    // HTML解析
+    // 列表加载
+    // 多状态显示
+    // 日志上报
+    // 视频播放器
+    // 响应式开发
+//    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+//    compile 'io.reactivex.rxjava2:rxjava:2.1.0'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'jp.wasabeef:picasso-transformations:2.1.2'
+    compile 'com.jakewharton:butterknife:8.6.0'
+    compile 'com.github.zhaokaiqiang.klog:library:1.6.0'
+    compile 'com.orhanobut:hawk:2.0.1'
+    compile 'org.jsoup:jsoup:1.10.2'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:latest.release'
+    compile 'com.github.czy1121:loadinglayout:1.0.1'
+    compile 'com.tencent.bugly:crashreport:latest.release'
+    compile 'com.github.Rukey7:IjkPlayerView:latest.release'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+}
